@@ -18,14 +18,17 @@ fn calc_value(line: &str) -> i32 {
                     .split_whitespace().map(|c| { c.parse::<i32>().unwrap()}).collect();
     numbers = line.split(":").nth(1).unwrap().split("|").nth(1).unwrap()
                     .split_whitespace().map(|c| { c.parse::<i32>().unwrap()}).collect();
+    
+    let num_matches: usize = winning_n.iter()
+        .filter(|&num| numbers.contains(num))
+        .count();
+    
+    if num_matches == 0{
+        return calc;
+    }
 
-    for num in winning_n {
-        println!("Winning numbers:{}", num);
-    }
-    for num in numbers {
-        println!("Numbers:{}", num);
-    }
-    println!("\n");
+    calc = i32::pow(2, num_matches as u32 - 1);
+
     calc
 }
 
@@ -35,7 +38,7 @@ fn main() {
     
     contents = read_line("./input");
     for line in &contents {
-        calc_value(line);
-        // println!("{}", line);
+        sum += calc_value(line);
     }
+    println!("{}", sum);
 }
