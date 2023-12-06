@@ -3,7 +3,7 @@ This repository has my solutions for the exercises I managed to finish during th
 However, they won't be the most efficient way to go about them, as this was a way of learning a new language.
 
 ## Language Used
-The challenges were done in **Rust**. The challenges aren't done the most efficient way and could be improved a lot. However, this was only a repository made to learn the language.
+The challenges were done in **Rust**. They aren't done in the most efficient way and could be improved by a lot. However, this was only a repository made to learn the language.
 
 To run the challenges, make sure you have **Cargo** installed and to compile the code run...
 ```
